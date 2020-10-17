@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, './src'), // src 내부의 index.js 를 바라본다
@@ -19,5 +20,18 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js'], // .js 확장자 생략 가능
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      filename: 'index.html',
+      showErrors: true,
+    }),
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
+    open: true,
+    historyApiFallback: true,
   },
 }
