@@ -1,7 +1,8 @@
-import React from 'React'
+import React from 'react'
+import From from '../components/login/form'
 
 function LoginPage() {
-  return <div>Login Page</div>
+  return <From />
 }
 
 export default LoginPage
